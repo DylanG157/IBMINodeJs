@@ -1,0 +1,22 @@
+{
+    "hooks": {},
+    "git": {
+      "changelog": "git log --pretty=format:\"* %s (%h)\" ${from}...${to}",
+      "requireCleanWorkingDir": false,
+      "requireBranch": false,
+      "requireUpstream": true,
+      "requireCommits": false,
+      "addUntrackedFiles": false,
+      "commit": true,
+      "commitMessage": "Release ${version}",
+      "commitArgs": [],
+      "tag": true,
+      "tagName": null,
+      "tagAnnotation": "Release ${version}",
+      "tagArgs": [],
+      "push": false
+    },
+    "npm": {
+      "publish": false
+    }
+  }

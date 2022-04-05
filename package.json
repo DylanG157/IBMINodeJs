@@ -1,0 +1,77 @@
+{
+  "name": "nodejs-poc-template",
+  "version": "1.0.3",
+  "description": "TODO: Give a short introduction of your project. Let this section explain the objectives or the motivation behind this project.",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "jest --setupFiles dotenv/config",
+    "dev": "node src/index.js",
+    "lint:js": "eslint . --ext .js,.jsx",
+    "lint:js:fix": "npm run lint:js -- --fix",
+    "compose-dev-image": "docker compose up",
+    "build-dev-image": "docker build -t nodejs-ibm .",
+    "run-dev-image": "docker run -p 3000:3000 -d nodejs-ibm ",
+    "start": "node -r dotenv/config index",
+    "start-diagnostics": "node --experimental-report index.js",
+    "start-debug": "node --redirect-warnings=log.txt   --unhandled-rejections=strict -r dotenv/config index",
+    "release": "release-it"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://Telesure@dev.azure.com/Telesure/STV%20Projects/_git/nodejs-poc-template"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "blocked": "^1.3.0",
+    "body-parser": "^1.19.0",
+    "chalk": "^5.0.0",
+    "compression": "^1.7.4",
+    "connect-timeout": "^1.9.0",
+    "cors": "^2.8.5",
+    "debug": "^4.3.3",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.23.4",
+    "express": "^4.17.1",
+    "express-validator": "^6.14.0",
+    "helmet": "^5.0.2",
+    "itoolkit-tih": "^1.0.0",
+    "jsonwebtoken": "^8.5.1",
+    "morgan": "^1.10.0",
+    "morgan-json": "^1.1.0",
+    "node-emoji": "^1.11.0",
+    "nvm": "0.0.4",
+    "odbc": "^2.4.1",
+    "winston": "^3.3.3",
+    "xml2js": "^0.4.23"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.14.8",
+    "@babel/core": "^7.15.0",
+    "@babel/node": "^7.14.9",
+    "@babel/preset-env": "^7.15.0",
+    "babel-jest": "^27.0.6",
+    "dotenv": "^10.0.0",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "jest": "^27.0.6",
+    "nodemon": "^2.0.12",
+    "prettier": "^2.3.2",
+    "release-it": "^14.10.1"
+  },
+  "babel": {
+    "presets": [
+      [
+        "@babel/env",
+        {
+          "targets": {
+            "node": "14.2.0"
+          }
+        }
+      ]
+    ]
+  }
+}
